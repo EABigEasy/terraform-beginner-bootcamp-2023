@@ -1,6 +1,6 @@
 # Terraform Beginner Bootcamp 2023
 
-## Semantic Versioning 
+## Semantic Versioning :mage:
  This Project is going to utilize semantic versioning for it's tagging.
 
 [semver.org](https://semver.org/)
@@ -13,7 +13,3 @@
 - **MINOR** version when you add functionality in a backward compatible manner
 - **PATCH** version when you make backward compatible bug fixes
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
-
-
-
-[def]: https://semver.org/
