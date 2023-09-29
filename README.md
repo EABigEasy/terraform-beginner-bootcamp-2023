@@ -186,17 +186,17 @@ Terraform sources their Providers and modules from the terraform registry which 
 
 [Random Terraform Provider](https://registry.terraform.io/providers/hashicorp/random/)
 
-### Terraform Console
+#### Terraform Console
 We can see a list of all Terraform Commands by simply typing `terraform`
 
-### Terraform Init
+#### Terraform Init
 
 `terrform init`
 
 At the start of  a new terraform project we will run `terraform init` to download the binaries for the terraform providers that we'll use in this project
 
 
-### Terraform Plan
+#### Terraform Plan
 
 `terraform plan`
 
@@ -204,7 +204,7 @@ This will generate out a changeset, about the state of our infrastructure and wh
 
 We can output this changeset i.e "plan" to be passed to an apply, but often you can just ignore outputting.
 
-### Terraform Apply
+#### Terraform Apply
 
 `terraform apply`
 
@@ -213,7 +213,15 @@ This will run a plan and pass the changeset to be execute by terraform. Apply sh
 If we want to automatically approve an apply we can provide the auto approve flag e.g
 `terraform apply --auto-approve`
 
-### Terrafrom Lock Files
+#### Terraform Destroy
+
+We can use the `terraform destroy` to destroy resources created.
+If we want to automatically approve to destroy  we can also  provide the auto approve flag e.g
+`terraform destroy --auto-approve`
+
+**Remember do not commit aws credentials(Access_key_id, Secret_access_key and default_region) to your repository. Delete after Terraform destroy**
+
+#### Terrafrom Lock Files
 
 `.terraform.lock.hcl` contains the  locked versioning for the providers or modules that should be used with this project.
 
@@ -229,3 +237,29 @@ If you lose this fule, you lose knowing the state of your infrastructure.
 ### Terraform Directory
 
 `.terraform` directory contains binaries of terraform providers ,
+
+
+## AWS Provider
+ There are rules to including AWS provider in the `main.tf` file. 
+
+ **Note** you can't add two terraform blocks, include the aws provider block in the main terraform block.
+[AWS Provider DOCS](https://registry.terraform.io/providers/hashicorp/aws/latest)
+
+
+### AWS S3 Bucket Naming rules
+
+When creating s3 Bucets, there are naming conventions to follow. Update your resource block eg
+```
+resource "random_string" "bucket_name" {
+  lower=true
+  upper =false
+  length   = 16
+  special  = false
+}
+
+```
+
+**Note** AWS Credentials must have right permission to create resources from terraform to aws, so as to to avoid Permissions Denied.
+
+[AWS DOCS on S3 Naming convention](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnaming)
+[Terraform S3 DOCS](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
