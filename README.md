@@ -243,6 +243,8 @@ If you lose this fule, you lose knowing the state of your infrastructure.
  There are rules to including AWS provider in the `main.tf` file. 
 
  **Note** you can't add two terraform blocks, include the aws provider block in the main terraform block.
+
+ 
 [AWS Provider DOCS](https://registry.terraform.io/providers/hashicorp/aws/latest)
 
 
@@ -262,4 +264,36 @@ resource "random_string" "bucket_name" {
 **Note** AWS Credentials must have right permission to create resources from terraform to aws, so as to to avoid Permissions Denied.
 
 [AWS DOCS on S3 Naming convention](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnaming)
+
 [Terraform S3 DOCS](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
+
+## Issues with Terrraform CLoud and Gitpod Workspace
+
+When attemoting to run `terraform login` it will launch a bash a wiswig view to generate a token. However it doesnt work expected in Gitpod VsCode in the browser
+
+#### Solution
+
+The Workaround is manually generate a token in Terraform Cloud.
+
+```
+https://app.terraform.io/app/settings/tokens?source=terraform-login
+
+```
+Then Create the file manually here:
+
+```sh
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+Provide the following code (replace your token in the file):
+
+```json
+{
+ "credentials": {
+   "app.terraform.io":{
+    "token": "YOUR-TERRAFORM-CLOUD-TOKEN"
+  }
+ }
+}
+
+```
