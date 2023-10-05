@@ -1,5 +1,14 @@
 # Terraform Beginner Bootcamp 2023
 
+## Table of Content
+-[Semantic Versioning](#semantic-versioning)
+-[Install the Terraform CLI](#install-the-terraform-cli)
+
+-[Issues with Terrraform CLoud and Gitpod Workspace](#issues-with-terrraform-cloud-and-gitpod-workspace)
+
+
+
+
 ## Semantic Versioning :mage:
  This Project is going to utilize semantic versioning for it's tagging.
 
@@ -90,7 +99,7 @@ chmod 744 ./bin/install_terraform_cli.sh
 
 https://en.wikipedia.org/wiki/Chmod
 
-### Github Lifecycle (Before, Init, Command)
+### Gitpod Lifecycle (Before, Init, Command)
 
 We need to be careful when using the Init because it will not rerun if we restart an existing workspace.
 
