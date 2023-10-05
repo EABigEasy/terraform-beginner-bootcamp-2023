@@ -1,7 +1,5 @@
 # Table of contents
 
-# Table of contents
-
 - [Terraform Beginner Bootcamp 2023 -week 0](#terraform-beginner-bootcamp-2023--week-0)
   - [Semantic Versioning :mage:](#semantic-versioning-mage)
   - [Install the Terraform CLI](#install-the-terraform-cli)
@@ -12,10 +10,12 @@
     - [Execution Considerations](#execution-considerations)
     - [Linux Permissions COnsiderations](#linux-permissions-considerations)
   - [Gitpod Lifecycle](#gitpod-lifecycle-before-init-command)
-  - [env command](#env-command)
-  - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
-  - [Printing Vars](#printing-vars)
+  - [Working Env Vars](#working-env-vars)
+    - [env command](#env-command)
+    - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
+    - [Printing Vars](#printing-vars)
     - [Scoping of Env Vars](#scoping-of-env-vars)
+    - [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
   - [AWS CLI installation](#aws-cli-installation)
   - [Terraform Basics](#terraform-basics)
     - [Terraform Registry](#terraform-registry)
@@ -24,6 +24,9 @@
   - [AWS Provider](#aws-provider)
     - [AWS S3 Bucket Naming rules](#aws-s3-bucket-naming-rules)
   - [Issues with Terrraform CLoud and Gitpod Workspace](#issues-with-terrraform-cloud-and-gitpod-workspace)
+
+
+
 
 # Terraform Beginner Bootcamp 2023 -week 0
 
@@ -125,19 +128,20 @@ chmod 744 ./bin/install_terraform_cli.sh
 
 https://en.wikipedia.org/wiki/Chmod
 
-## Gitpod Lifecycle (Before, Init, Command)
+## Gitpod Lifecycle
 
 We need to be careful when using the Init because it will not rerun if we restart an existing workspace.
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
+## Working Env Vars
 
-## env command
+### env command
 We can list out all Environment Variables( Env VArs) using the `env` command.
 
 We can Filter specific env vars using grep e.g `env | grep AWS `
 
-## Setting and Unsetting Env Vars
+### Setting and Unsetting Env Vars
 
 In the terminal we can set using `export HELLO='world' `
 
@@ -156,7 +160,7 @@ Hello = 'world'
 echo $HELLO
 ```
 
-## Printing Vars
+### Printing Vars
 
 We can print an Env Var using echo eg. `echo $HELLO`
 
@@ -167,7 +171,7 @@ When you open up  new bash terminals in VSCode it will not be aware of env vars 
 If you want Env Vars to persist across all future bash terminals that are open you need to set env vars in your bash profile. eg. `.bash_profile`
 
 
-#### Persisting Env Vars in Gitpod 
+### Persisting Env Vars in Gitpod 
 We can persist env vars into gitpod by storing them in Gitpod Secrets Storage.
 
 ```
