@@ -1,6 +1,8 @@
 # Table of contents
 
-- [Terraform Beginner Bootcamp 2023 -week o](#terraform-beginner-bootcamp-2023--week-o)
+# Table of contents
+
+- [Terraform Beginner Bootcamp 2023 -week 0](#terraform-beginner-bootcamp-2023--week-0)
   - [Semantic Versioning :mage:](#semantic-versioning-mage)
   - [Install the Terraform CLI](#install-the-terraform-cli)
     - [Considerations with the Terraform CLI Changes](#considerations-with-the-terraform-cli-changes)
@@ -9,28 +11,19 @@
     - [Shebang Considerations](#shebang-considerations)
     - [Execution Considerations](#execution-considerations)
     - [Linux Permissions COnsiderations](#linux-permissions-considerations)
-    - [Gitpod Lifecycle (Before, Init, Command)](#githpod-lifecycle-before-init-command)
-    - [env command](#env-command)
-    - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
+  - [Gitpod Lifecycle](#gitpod-lifecycle-before-init-command)
+  - [env command](#env-command)
+  - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
   - [Printing Vars](#printing-vars)
     - [Scoping of Env Vars](#scoping-of-env-vars)
-      - [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
-    - [AWS CLI installation](#aws-cli-installation)
+  - [AWS CLI installation](#aws-cli-installation)
   - [Terraform Basics](#terraform-basics)
     - [Terraform Registry](#terraform-registry)
-      - [Terraform Console](#terraform-console)
-      - [Terraform Init](#terraform-init)
-      - [Terraform Plan](#terraform-plan)
-      - [Terraform Apply](#terraform-apply)
-      - [Terraform Destroy](#terraform-destroy)
-      - [Terrafrom Lock Files](#terrafrom-lock-files)
     - [Terraform State Files](#terraform-state-files)
     - [Terraform Directory](#terraform-directory)
   - [AWS Provider](#aws-provider)
     - [AWS S3 Bucket Naming rules](#aws-s3-bucket-naming-rules)
   - [Issues with Terrraform CLoud and Gitpod Workspace](#issues-with-terrraform-cloud-and-gitpod-workspace)
-      - [Solution](#solution)
-
 
 # Terraform Beginner Bootcamp 2023 -week 0
 
