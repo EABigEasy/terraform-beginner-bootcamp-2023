@@ -1,4 +1,5 @@
- cloud {
+ terraform {
+    cloud {
     organization = "Emmanuel"
 
     workspaces {
@@ -17,11 +18,4 @@
 
   }
 
-
-provider "random" {
-  # Configuration options
-}
-
-provider "aws" {
-  
 }
