@@ -79,3 +79,21 @@ The order of precedence for variables in Terraform can be summarized as follows,
 [Terraform Commands](https://developer.hashicorp.com/terraform/cli/commands/)
 
 
+## Dealing with Configuration Drift
+
+## What happens if we lose our state file?
+If you lose your state file, you most likely have to tear down all your cloud infrastructure 
+
+You can use terraform import but it won't work for all cloud resources you need to check the terraform providers documentation for which resources import supports.
+
+### Fix Missing Resources with Terraform Import
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
+[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
+
+### Fix Manual COnfiguration
+
+If someone goes and delete or modifies or modifies cloud resource manually through clickops
+
+Terraform plan. If we run teraform plan, it attempts to put our infrastructure back into the expected stae fixing configuration Drift.
