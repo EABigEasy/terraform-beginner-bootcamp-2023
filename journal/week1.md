@@ -97,3 +97,42 @@ if older  terraform version
 If someone goes and delete or modifies cloud resource manually through ClickOps, running terraform plan is with attempt to put infrastructure back into the expected state fixing the drift. 
 
 **Note:Terraform is really good with configuration drift, if you delete a bucket, it automatically creates the bucket when you run `terraform plan` again. A slong as the file are not deleted e.g main.tf, variables.tf, outputs.tf, proviers.tf. ***
+
+## Fix using Terraform Refresh
+
+```tf
+terrsform apply -refresh-only -auto-approve
+```
+
+## Terraform Modules
+
+### Terraform Module Structure
+ It is recommended to place modules in a `modules` directory when locally developing modules but you can name it what you like.
+### Passing Input Variables
+
+We can pass input variables to our module.
+The Module has to declare the terraform variables in its own variables.tf 
+like we did modules/terrahouse_aws folder consits of main.tf, output.tf, variables.tf
+
+```tf
+module "terrahouse_aws" {
+  source="./modules/terrahouse_aws"
+  user_uuid=var.user_uuid
+  bucket_name=var.bucket_name
+}
+```
+
+### Modules Sources
+Using the source we can import the module from varioys places e.g
+-locally
+-GitHub
+-Terraform Registry 
+
+```tf
+module "terrahouse_aws" {
+  source="./modules/terrahouse_aws"
+```
+
+[Module Sources](https://developer.hashicorp.com/terraform/language/modules/sources)
+
+**NOTE: Everything in modules folder must match the top level, files like main.tf, variables.tf in the main folder**
