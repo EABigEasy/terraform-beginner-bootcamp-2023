@@ -17,3 +17,12 @@ variable "bucket_name" {
     error_message = "The bucket name must be 3-63 characters long and may only contain alphanumeric characters, hyphens, or periods."
   }
 }
+
+variable "index_html_filepath" {
+  type        = string
+}
+
+variable "error_html_filepath" {
+  type        = string
+ 
+}

@@ -3,5 +3,5 @@ output "bucket_name" {
 }
 
 output "website_endpoint" {
-    value = aws_s3_bucket_website_configuration.website_conifugration.website.website_endpoint
+    value = aws_s3_bucket_website_configuration.website_conifugration.website_endpoint
 }

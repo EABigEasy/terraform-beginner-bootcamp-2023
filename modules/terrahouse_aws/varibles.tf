@@ -17,3 +17,21 @@ variable "bucket_name" {
     error_message = "The bucket name must be 3-63 characters long and may only contain alphanumeric characters, hyphens, or periods."
   }
 }
+variable "index_html_filepath" {
+  description = "Path to the index HTML file"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.index_html_filepath)
+    error_message = "The specified index HTML file does not exist."
+  }
+}
+variable "error_html_filepath" {
+  description = "Path to the index HTML file"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.error_html_filepath)
+    error_message = "The specified Error HTML file does not exist."
+  }
+}
