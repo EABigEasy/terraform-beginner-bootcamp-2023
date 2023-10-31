@@ -136,3 +136,9 @@ module "terrahouse_aws" {
 [Module Sources](https://developer.hashicorp.com/terraform/language/modules/sources)
 
 **NOTE: Everything in modules folder must match the top level, files like main.tf, variables.tf in the main folder**
+
+## Considerations when using ChatGPT to write Terraform
+
+LLMs such as ChatGPT may not be trained on the latest documentation or information about Terraform
+
+it may produce older examples that could be deprecated. Often affecting the providers.
